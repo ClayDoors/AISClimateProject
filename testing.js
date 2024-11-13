@@ -5,7 +5,7 @@ data = {
       "weight_value": 5,
       "weight_unit": "lb",
       "distance_value": 2000,
-      "distance_unit": "km",
+      "distance_unit": "mi",
       "transport_method": "truck"
 };
 
