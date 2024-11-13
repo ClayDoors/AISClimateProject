@@ -1,0 +1,52 @@
+{
+        "data": {
+            "id": "647f3fec-9a31-48c8-acc2-359f39cc3122",
+            "type": "vehicle_make",
+            "attributes": {
+                "name": "Ford",
+                "number_of_models": 3436
+            }
+        }
+    },
+{
+        "data": {
+            "id": "eaca7ef3-19e0-47f5-84d8-bb78c6bde5d2",
+            "type": "vehicle_make",
+            "attributes": {
+                "name": "Mercedes-Benz",
+                "number_of_models": 1643
+            }
+        }
+    },
+ {
+        "data": {
+            "id": "91c6b608-e403-4ff0-866e-2a7797b0b6cb",
+            "type": "vehicle_make",
+            "attributes": {
+                "name": "Ram",
+                "number_of_models": 104
+            }
+        }
+    },
+{
+        "data": {
+            "id": "ca8b9a78-929e-4ea0-aeee-9c8a2651030e",
+            "type": "vehicle_make",
+            "attributes": {
+                "name": "Morgan",
+                "number_of_models": 3
+            }
+        }
+    },
+
+{
+        "data": {
+            "id": "364a4c20-aae0-486b-a0c2-c35516d48f4f",
+            "type": "vehicle_model",
+            "attributes": {
+                "name": "750C/I-Mark",
+                "year": 1985,
+                "vehicle_make": "Isuzu"
+            }
+        }
+

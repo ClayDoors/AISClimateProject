@@ -1,10 +1,12 @@
 const url = "https://www.carboninterface.com/api/v1/estimates"; // Replace with the actual endpoint URL
 
 data = {
-  type: "vehicle",
-  distance_unit: "mi",
-  distance_value: 100,
-  vehicle_model_id: "7268a9b7-17e8-4c8d-acca-57059252afe9"
+  "type": "shipping",
+      "weight_value": 5,
+      "weight_unit": "lb",
+      "distance_value": 2000,
+      "distance_unit": "km",
+      "transport_method": "truck"
 };
 
 fetch(url, {

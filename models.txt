@@ -1,0 +1,22 @@
+{
+        "data": {
+            "id": "85df1d44-081b-48c2-9758-cb96ee6a37ec",
+            "type": "vehicle_model",
+            "attributes": {
+                "name": "Transit Connect Van",
+                "year": 2013,
+                "vehicle_make": "Ford"
+            }
+        }
+    },
+{
+        "data": {
+            "id": "364a4c20-aae0-486b-a0c2-c35516d48f4f",
+            "type": "vehicle_model",
+            "attributes": {
+                "name": "750C/I-Mark",
+                "year": 1985,
+                "vehicle_make": "Isuzu"
+            }
+        }
+        
