@@ -3,6 +3,8 @@ const app = express()
 const port = 3000
 const url = "https://www.carboninterface.com/api/v1/estimates";
 const bodyParser = require('body-parser'); 
+require('dotenv').config();
+const apikey= process.env.CIAPI_KEY;
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('public'))
@@ -32,7 +34,7 @@ data = {
 fetch(url, {
   method: "POST",
   headers: {
-    "Authorization": "Bearer eINv60QdXD2xhUvM2ezbJw", // Replace with your actual token if dynamic
+    "Authorization": apikey, // Replace with your actual token if dynamic
     "Content-Type": "application/json"
   },
   body: JSON.stringify(data)
