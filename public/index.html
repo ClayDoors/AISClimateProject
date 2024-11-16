@@ -1,64 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AIS Project</title>
+<title>EcoBoost - Carbon Emission Tracker</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  /* Styling for taskbar */
+  .w3-bar {
+    background-color: #D3D3D3; /*grey background*/
+    color: #5d550e; /*text color*/
+  }
+
+  .w3-bar a {
+    font-weight: bold;
+    color: #5d550e !important; /*text color*/
+  }
+
+  .w3-bar a:hover {
+    background-color: #EBF5FB; /* Subtle hover effect */
+    color: #5d550e !important;
+  }
+
+  /* Styling logo */
+  .ecoboost-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Form styles */
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  button i:hover {
+    color: #af7c4c;
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+
+  /* Body background */
+  body {
+    background-image: url(''); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+</style>
 </head>
 <body id="myPage">
-
-<!-- Sidebar on click -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-brown">Close
-    <i class="fa fa-remove"></i>
-  </a>
-</nav>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme-d2 w3-left-align">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-brown"><i class="fa fa-home w3-margin-right"></i>EcoBoost</a>
-    <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
-    <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-    <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
-    
-    <!-- Dropdown -->
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button w3-hover-white">More</button>
-      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
-      </div>
-    </div>
-    
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-brown" title="Search"><i class="fa fa-search"></i></a>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white" href="javascript:void(0);" onclick="openNav()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button ecoboost-logo"><i class="fa fa-leaf w3-margin-right"></i>EcoBoost</a>
+    <a href="#introduction" class="w3-bar-item w3-button w3-hover-white">Introduction</a>
+    <a href="#calculator" class="w3-bar-item w3-button w3-hover-white">Carbon Calculator</a>
+    <a href="#how-it-works" class="w3-bar-item w3-button w3-hover-white">How It Works</a>
+    <a href="#reduce-footprint" class="w3-bar-item w3-button w3-hover-white">How to Reduce Your Carbon Footprint</a>
+    <a href="#impact" class="w3-bar-item w3-button w3-hover-white">Impact</a>
   </div>
 </div>
 
-<!-- JavaScript for Sidebar -->
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
+<!-- Form -->
 <form action="/" method="post">
-  <!-- user input-->
-  Source:<br>
-  <input type="text" name="source" placeholder="Source" required><br><br>
-  Destination:<br>
-  <input type="text" name="destination" placeholder="Destination" required><br><br>
-  Weight:<br>
-  <input type="text" name="weight" placeholder="Weight" required><br><br>
-  <!-- submit button -->
-  <input type="submit" value="login">
+  <label for="source">Source:</label>
+  <input type="text" id="source" name="source" placeholder="Enter Source" required>
+  
+  <label for="destination">Destination:</label>
+  <input type="text" id="destination" name="destination" placeholder="Enter Destination" required>
+  
+  <label for="weight">Weight:</label>
+  <input type="text" id="weight" name="weight" placeholder="Enter Weight" required>
+
+  <!-- Icon as Submit Button -->
+  <button type="submit" style="border: none; background: none; cursor: pointer;">
+    <i class="fa fa-calculator w3-xxlarge w3-text-green" title="Calculate"></i>
+  </button>
+</form>
+
 </body>
 </html>
