@@ -26,7 +26,7 @@ data = {
   "type": "shipping",
       "weight_value": weight,
       "weight_unit": "lb",
-      "distance_value": 2000,
+      "distance_value": 277,
       "distance_unit": "mi",
       "transport_method": "truck"
 };
