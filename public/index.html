@@ -148,11 +148,248 @@
     <input type="text" id="weight" name="weight" placeholder="Enter Weight" required>
 
     <!-- Submit Button -->
-    <button type="submit" style="border: none; background: none; cursor: pointer;">
-      <i class="fa fa-calculator w3-xxlarge w3-text-green" title="Calculate"></i>
-    </button>
-  </form>
-</div>
+    <button type="submit" <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+      
+          <!-- Google Fonts -->
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+      
+          <!-- Reset CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      
+          <style>
+              :root {
+                  --primary: #ef4444;
+                  --primary-light: #f87171;
+                  --dark: #1c212e;
+                  --gray-dark: #3f4656;
+                  --gray: #6c7486;
+                  --gray-light: #cdd9ed;
+                  --white: #fff;
+                  --green: #16bf78;
+                  --sand: #fbbf24;
+                  --sand-light: #fbbf24;
+              }
+      
+              html {
+                  box-sizing: border-box;
+                  -webkit-font-smoothing: antialiased;
+              }
+      
+              *,
+              *::before,
+              *::after {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: inherit;
+              }
+      
+              body {
+                  min-height: 100vh;
+                  font-family: "Roboto", arial;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: #0f172a;
+              }
+      
+              .order {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  border: 0;
+                  background: var(--dark);
+                  position: relative;
+                  height: 63px;
+                  width: 240px;
+                  padding: 0;
+                  outline: none;
+                  cursor: pointer;
+                  border-radius: 32px;
+                  mask-image: radial-gradient(circle, #fff, #000);
+                  -webkit-mask-image: -webkit-radial-gradient(circle, #fff, #000);
+                  -webkit-tap-highlight-color: transparent;
+                  overflow: hidden;
+                  transition: all;
+              }
+      
+              .order span {
+                  --o: 1;
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  text-align: center;
+                  top: 19px;
+                  line-height: 24px;
+                  color: var(--white);
+                  font-size: 16px;
+                  opacity: var(--o);
+                  transition: opacity 0.3s ease;
+              }
+      
+              .order span.default {
+                  transition-delay: 0.3s;
+              }
+      
+              .order span.success {
+                  --offset: 16px;
+                  --o: 0;
+              }
+      
+              .order span.success svg {
+                  width: 12px;
+                  height: 10px;
+                  display: inline-block;
+                  vertical-align: top;
+                  fill: none;
+                  margin: 7px 0 0 4px;
+                  stroke: var(--green);
+                  stroke-width: 2;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-dasharray: 16px;
+                  stroke-dashoffset: var(--offset);
+                  transition: stroke-dashoffset 0.3s ease;
+              }
+      
+              .order:active {
+                  transform: scale(0.96);
+              }
+      
+              .order .lines {
+                  opacity: 0;
+                  position: absolute;
+                  height: 3px;
+                  background: var(--white);
+                  border-radius: 2px;
+                  width: 6px;
+                  top: 30px;
+                  left: 100%;
+                  box-shadow: 15px 0 0 var(--white),
+                      30px 0 0 var(--white),
+                      45px 0 0 var(--white),
+                      60px 0 0 var(--white),
+                      75px 0 0 var(--white),
+                      90px 0 0 var(--white),
+                      105px 0 0 var(--white),
+                      120px 0 0 var(--white),
+                      135px 0 0 var(--white),
+                      150px 0 0 var(--white),
+                      165px 0 0 var(--white),
+                      180px 0 0 var(--white),
+                      195px 0 0 var(--white),
+                      210px 0 0 var(--white),
+                      225px 0 0 var(--white),
+                      240px 0 0 var(--white),
+                      255px 0 0 var(--white),
+                      270px 0 0 var(--white),
+                      285px 0 0 var(--white),
+                      300px 0 0 var(--white),
+                      315px 0 0 var(--white),
+                      330px 0 0 var(--white);
+              }
+      
+              .order .box {
+                  --start: var(--sand-light);
+                  --stop: var(--sand);
+                  width: 21px;
+                  height: 21px;
+                  right: 100%;
+                  top: 21px;
+              }
+      
+              .order .truck {
+                  width: 60px;
+                  height: 41px;
+                  left: 100%;
+                  z-index: 1;
+                  top: 11px;
+                  position: absolute;
+                  transform: translateX(24px);
+              }
+      
+              .order .truck .back {
+                  left: 0;
+                  top: 0;
+                  width: 60px;
+                  height: 41px;
+                  z-index: 1;
+              }
+      
+              .order .truck .fronts {
+                  overflow: hidden;
+                  position: absolute;
+                  border-radius: 2px 9px 9px 2px;
+                  width: 26px;
+                  height: 41px;
+                  left: 60px;
+              }
+      
+              .order .truck .fronts .window {
+                  overflow: hidden;
+                  border-radius: 2px 8px 8px 2px;
+                  background: var(--primary-light);
+                  transform: perspective(4px) rotateY(3deg);
+                  width: 22px;
+                  height: 41px;
+                  position: absolute;
+                  top: 0;
+                  z-index: 1;
+                  transform-origin: 0 50%;
+              }
+      
+              .order.animate .truck {
+                  animation: truck 10s ease forwards;
+              }
+      
+              @keyframes truck {
+                  10%,
+                  30% {
+                      transform: translateX(-164px);
+                  }
+      
+                  40% {
+                      transform: translateX(-104px);
+                  }
+      
+                  60% {
+                      transform: translateX(-224px);
+                  }
+      
+                  75%,
+                  100% {
+                      transform: translateX(24px);
+                  }
+              }
+          </style>
+      </head>
+      <body>
+          <button class="order">
+              <span class="default">Calculate</span>
+              <span class="success">Thank you!
+                  <svg viewBox="0 0 12 10">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </svg>
+              </span>
+              <div class="box"></div>
+              <div class="truck">
+                  <div class="back"></div>
+                  <div class="fronts">
+                      <div class="window"></div>
+                  </div>
+              </div>
+              <div class="lines"></div>
+          </button>
+      
+          <!-- JavaScript libraries -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      </body>
+      </html>
+      
 
 <!-- How to Reduce Footprints Section -->
 <div id="usage" class="section">
@@ -161,8 +398,10 @@
 
 <!-- Pricing Section -->
 <div id="pricing" class="section">
-  <h2>Pricingh</h2>
+  <h2>Pricing</h2>
 </div>
+
+<!--Loading truck -->
 
 </body>
 </html>
