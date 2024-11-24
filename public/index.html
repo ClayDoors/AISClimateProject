@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   /* Enhanced Styling for taskbar */
@@ -13,43 +12,34 @@
     background: #D3D3D3; /* Aesthetic grey background */
     color: #5d550e; /* Navbar item color */
     display: flex;
-    align-items: center; /* Vertically centers the items */
-    height: 45px; /* Reduced height for better proportions */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
-    padding: 0 10px; /* Adjusted padding for a narrower navbar */
+    align-items: center;
+    height: 45px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 10px;
   }
 
   .w3-bar a {
     font-weight: bold;
     color: #5d550e !important;
     display: flex;
-    align-items: center; /* Vertically center text in each navbar item */
-    height: 45px; /* Ensures consistent item height */
-    padding: 0 10px; /* Horizontal padding for spacing between items */
-    transition: all 0.3s ease; /* Smooth transition on hover */
-    font-size: 16px; /* Reduced font size */
+    align-items: center;
+    height: 45px;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    font-size: 16px;
   }
 
   .w3-bar a:hover {
-    background-color: #EBF5FB; /* Subtle hover effect */
+    background-color: #EBF5FB;
     color: #5d550e !important;
-    transform: scale(1.1); /* Slight scaling effect on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow for hover effect */
-    border-radius: 4px; /* Rounded corners on hover */
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
   }
 
-  /* Styling for the EcoBoost logo */
-  .ecoboost-logo {
-    font-size: 20px; /* Slightly reduced font size */
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    padding-right: 15px;
-  }
-
-  /* Form styles */
   form {
     position: relative;
-    top: 20px; /* Adjusted top margin */
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     text-align: left;
@@ -75,40 +65,49 @@
     display: block;
   }
 
-  button i:hover {
-    color: #af7c4c;
-    transform: scale(1.1);
-    transition: 0.2s;
+  .submit-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
 
-  /* Body background */
-  body {
-    background-image: url(''); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
+  .submit-btn:hover {
+    background-color: #45a049;
   }
 
-  /* Smooth Scroll */
-  html {
-    scroll-behavior: smooth;
+  .submit-btn:active {
+    transform: scale(0.95);
   }
 
-  /* Section Styling */
-  .section {
-    padding: 40px;
-    min-height: 100vh;
+  .submit-btn span {
+    position: relative;
+    display: inline-block;
   }
 
-  #calculator {
-    background-color: #f4f4f4; /* Light grey background for the calculator */
+  .submit-btn .default {
+    opacity: 1;
+    transition: opacity 0.3s;
   }
 
-  #about {
-    background-color: #fff; /* White background for the introduction */
+  .submit-btn.animate .default {
+    opacity: 0;
+  }
+
+  .submit-btn .success {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .submit-btn.animate .success {
+    opacity: 1;
   }
 
 </style>
@@ -137,7 +136,7 @@
   <p>Use the form below to calculate the carbon footprint of your delivery:</p>
   
   <!-- Calculator Form -->
-  <form action="/" method="post">
+  <form id="calculatorForm" action="/" method="post">
     <label for="source">Source:</label>
     <input type="text" id="source" name="source" placeholder="Enter Source" required>
 
@@ -147,9 +146,10 @@
     <label for="weight">Weight:</label>
     <input type="text" id="weight" name="weight" placeholder="Enter Weight" required>
 
-    <!-- Icon as Submit Button -->
-    <button type="submit" style="border: none; background: none; cursor: pointer;">
-      <i class="fa fa-calculator w3-xxlarge w3-text-green" title="Calculate"></i>
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">
+      <span class="default">Calculate</span>
+      <span class="success">Done!</span>
     </button>
   </form>
 </div>
@@ -166,5 +166,20 @@
   <p></p>
 </div>
 
+<script>
+  // Form Submit Animation
+  document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent actual form submission for demonstration purposes
+    const submitBtn = document.querySelector(".submit-btn");
+    submitBtn.classList.add("animate");
+
+    // Simulate a backend call delay
+    setTimeout(() => {
+      submitBtn.classList.remove("animate");
+    }, 3000); // Animation lasts 3 seconds
+  });
+</script>
+
 </body>
 </html>
+
