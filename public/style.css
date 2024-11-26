@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+    font-family: 'Space Grotesk', sans-serif;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    flex-wrap: wrap;
+}
+
+body{  
+min-width: 390px;
+color:whitesmoke;
+margin: 0; /* Remove any extra margins */
+padding: 0; /* Remove any extra padding */
+background: url("background_image.jpg");
+background-size: cover;  /* Ensures the image covers the entire area */
+background-position: center; /* Centers the image */
+background-repeat: no-repeat; /* Prevents the image from repeating */
+background-attachment: fixed;
+}
+
+h2{
+    font-family: 'Space Grotesk';
+    text-align: center;
+    font-size:3em;
+    margin-top: 0;
+}
+
+/* Header Styling */
+
+nav#nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  
+    padding: 10px 20px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Added subtle shadow for visual separation */
+}
+
+/* Menu Title Styling */
+#menu_title {
+    text-align: center;
+    color: hsl(160, 60%, 99%);
+    flex: 2; /* Ensures the title takes up a larger portion of the navbar */
+}
+
+/* Unordered List Styling */
+#menu_items ul {
+    display: flex; /* Align links horizontally */
+    padding-inline-start: 0;
+    margin-block-start: 0;
+}
+
+/* Individual List Items */
+#menu_items ul li {
+    list-style: none;
+    margin: 0 25px; /* Increased margin for more spacing between items */
+}
+
+/* Navigation Links */
+#menu_items ul li a.nav-link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Space Grotesk';
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 5px black;
+    transition: color 0.3s, transform 0.3s; /* Smooth hover effect */
+}
+
+/* Hover Effect for Links */
+#menu_items ul li a.nav-link:hover {
+    color: lightgreen;
+    transform: scale(2); /* Slightly enlarge on hover */
+}
+
+/* Navbar Titles */
+h1#title {
+    transform: translateX(5%);
+    display: inline-flex;
+    flex-direction: column;
+    color: lightgreen;
+    font-size: 2.25rem; /* Reduced to half of the original size */
+    letter-spacing: 1vw; /* You can also adjust this if needed */
+    line-height: 1.2em;
+    text-shadow: 2px 2px 6px black;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Titles - First and Second Lines */
+#first_liner, #second_liner {
+    font-family: 'Space Grotesk';
+}
+
+/* This is where the Header styling ends */
+
+section h2{
+    text-shadow: 2px 2px 6px black ;
+}
+
+main{
+    min-height: 100vh; /* Ensures the content section takes up the full viewport height */
+    margin-top: 60px;
+}
+
+/* Box Styling (Your existing decorative boxes) */
+.decorative-box {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.6); /* Transparent background for the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+    backdrop-filter: blur(5px); /* Adds a blur effect behind the box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Text color */
+    font-family: 'Space Grotesk'; /* Choose a simple, readable font */
+}
+
+footer{
+    background-color:rgba(128,128,128, 0.6);
+    text-align: center;
+}
+
+footer p{
+    font-size: 1.4em;
+}
+
+#footer_container{
+    margin-top:50px;
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    height:10vh;
+    font-size:1.2em;
+}
+
+/* Form Styling */
+#calculator-form {
+    display: flex;
+    flex-direction: column; /* Stacks form elements vertically */
+    align-items: center; /* Centers the form elements */
+    gap: 15px; /* Adds space between form elements */
+    width: 100%;
+    max-width: 400px; /* Limits the width for better design */
+    margin-top: 20px; /* Ensures form has space at the top */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Ensures label and input are stacked */
+    align-items: flex-start; /* Aligns text on the left */
+    width: 100%; /* Full width within the decorative box */
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px; /* Adds space between the label and input */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#calculate-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calculate-button:hover {
+    background-color: #218838;
+}
