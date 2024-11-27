@@ -70,38 +70,32 @@
         </section>
 
         <!-- Calculator Section -->
-        <section id="calculator">
-            <h2>Calculator</h2>
-            <div class="card_text">
-                <form>
-                    <label for="source">Source:</label>
-                    <input type="text" id="source" name="source" required>
-                    
-                    <label for="destination">Destination:</label>
-                    <input type="text" id="destination" name="destination" required>
-                    
-                    <label for="weight">Weight:</label>
-                    <input type="number" id="weight" name="weight" required>
-
-                    <!-- Animated Button -->
-                        <button type="submit" class="order">
-                        <span class="default">Start loading</span>
-                        <span class="success">loaded<svg viewBox="0 0 12 10">
-                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                        </svg></span>
-                        <div class="box"></div>
-                        <div class="truck">
-                            <div class="back"></div>
-                            <div class="fronts">
-                                <div class="window"></div>
-                            </div>
-                            <div class="light top"></div>
-                            <div class="light bottom"></div>
-                        </div>
-                        <div class="lines"></div>
-                    </button>
+        <form method="POST" action="/">
+            <label for="source">Source:</label>
+            <input type="text" id="source" name="source" required>
+            
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+            
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" name="weight" required>
+        
+            <button type="submit" class="order">
+                <span class="default">Start loading</span>
+                <span class="success">loaded</span>
+                <div class="box"></div>
+                <div class="truck">
+                    <div class="back"></div>
+                    <div class="fronts">
+                        <div class="window"></div>
+                    </div>
+                    <div class="light top"></div>
+                    <div class="light bottom"></div>
                 </div>
-                </form>
+                <div class="lines"></div>
+            </button>
+        </form>
+        
         </section>
 
         <!-- Impact and Preventions Section -->
