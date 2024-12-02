@@ -50,12 +50,14 @@ nav#nav-bar {
 
 #menu_items ul {
     display: flex;
+    text-align: center;
     padding-inline-start: 0;
     margin-block-start: 0;
 }
 
 #menu_items ul li {
     list-style: none;
+    text-align: center;
     margin: 0 25px;
 }
 
@@ -107,11 +109,28 @@ main {
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     color: black;
     font-family: 'Space Grotesk';
 }
+.decorative-boxes {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    color: black;
+    font-family: 'Space Grotesk';
+}
+
 
 footer {
     background-color: rgba(128, 128, 128, 0.6);
@@ -139,7 +158,11 @@ footer p {
     flex-direction: column;
     text-align: center;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* Ensures the width is just enough to fit its content */
 }
+
 
 form {
     width: 100%;
