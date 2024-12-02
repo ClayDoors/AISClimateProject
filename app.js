@@ -59,8 +59,48 @@ app.post('/', async (req, res) => {
 
     // Render the EJS template and pass the JSON data
     const pounds = carbonEstimate.data.attributes.carbon_lb;
-    res.send(`<h1>The carbon estimate is ${pounds} pounds</h1>
-    <a href="/">Go back</a>`);
+    res.send(`  <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Carbon Estimate</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          background-color: #f0f8ff;
+          color: #333;
+        }
+        h1 {
+          font-size: 2.5em;
+          margin-bottom: 20px;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+          background-color: #007bff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 1em;
+          transition: background-color 0.3s;
+        }
+        a:hover {
+          background-color: #0056b3;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Your package is estimate to cause ${pounds} pounds of carbon dioxide to be released into the atmosphere.</h1>
+      <a href="/">Go back</a>
+    </body>
+    </html>`);
   } catch (error) {
     console.error("Error occurred:", error.message);
     console.error("Stack Trace:", error.stack);

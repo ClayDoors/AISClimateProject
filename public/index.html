@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoBoost</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Importing Fonts -->
+    <link rel="stylesheet" href="truck_loading.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <!-- css api -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <!-- css link -->
-    <link rel="stylesheet" href="truck_loading.css">
-
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -40,83 +35,59 @@
         <section id="introduction">
             <h2>Introduction</h2>
             <div class="decorative-box">
-                <p>One of the main problems in today’s society is climate change. Out of all the problems in
-                    climate change, arguably the biggest factor that increases it is the carbon footprint released when
-                    transporting products through different types of vehicles. Some of the biggest postal services in
-                    the world, like FedEx, USPS, and UPS, constantly release tons of Carbon Dioxide emissions
-                    every day. While it may be impossible to find that number, it is possible to find how much
-                    carbon dioxide emissions your order releases when ordering from FedEx, USPS, or UPS.</p>
-                <p>EcoTrack, our newly designed and state of the art programmed website, allows us to see
-                    this. EcoTrack takes in multiple variables, including the type of postal service, the transportation
-                    type, the vehicle model, and the distance. Then, it calculates the carbon dioxide emissions
-                    released by that product. It does this through the built in code we made mixed special APIS
-                    relating to the variables needed in order to calculate the numbers. The numbers will shock you,
-                    which is why there's also a tab that shows you how to decrease carbon dioxide not just through
-                    ordering, but in all sorts of ways. EcoTrack helps show anyone who orders products online
-                    (using FedEx, USPS, or UPS) the unfortunate harm their products cause to the environment,
-                    which is why it’s so unique.While there are many websites that tell their audience the harm
-                    transporting products causes on the environment, EcoTrack takes their personal order
-                    details(inputted by the user) to demonstrate the harm on the environment.</p>
-                <p>If nothing changes, carbon dioxide emissions will only get worse as time goes on.
-                    According to “Ourworldindata”, transportation accounts for around 24% of US Greenhouse gas
-                    emissions. Out of that 24%, around 53% comes from shipping these products, with trucks and
-                    lorries accounting for almost 30% (Ritchie, 2020).</p>
-                <p>Most people do not understand how much carbon dioxide emissions their orders release,
-                    even if their products are being transported in their state. By creating a website in which people
-                    can understand how much carbon dioxide emissions their order releases while also providing
-                    solutions on how to reduce their carbon footprint, we can help reduce the overall carbon
-                    emissions produced on this earth.</p>
+                <ul>
+                    <li>One of the main problems in today’s society is climate change, with carbon footprint from product transportation being a major factor.</li>
+                    <li>Major postal services like FedEx, USPS, and UPS release tons of carbon dioxide emissions daily.</li>
+                    <li>EcoTrack allows users to estimate carbon dioxide emissions for their orders by considering postal service, transportation type, vehicle model, and distance.</li>
+                    <li>EcoTrack combines built-in code with special APIs to provide accurate emissions data.</li>
+                    <li>Transportation accounts for around 24% of US greenhouse gas emissions, with 53% from shipping, and trucks and lorries contributing nearly 30%.</li>
+                    <li>EcoTrack helps users understand the carbon footprint of their orders and offers solutions for reducing emissions.</li>
+                </ul>
             </div>
         </section>
 
         <!-- Calculator Section -->
-        <form method="POST" action="/">
-            <label for="source">Source:</label>
-            <input type="text" id="source" name="source" required>
-            
-            <label for="destination">Destination:</label>
-            <input type="text" id="destination" name="destination" required>
-            
-            <label for="weight">Weight:</label>
-            <input type="number" id="weight" name="weight" required>
-        
-            <button type="submit" class="order">
-                <span class="default">Start loading</span>
-                <span class="success">loaded</span>
-                <div class="box"></div>
-                <div class="truck">
-                    <div class="back"></div>
-                    <div class="fronts">
-                        <div class="window"></div>
-                    </div>
-                    <div class="light top"></div>
-                    <div class="light bottom"></div>
-                </div>
-                <div class="lines"></div>
-            </button>
-        </form>
-        
+        <section id="calculator">
+            <h2>Calculator</h2>
+            <div class="decorative-box">
+                <form method="POST" action="/">
+                    <label for="source">Source:</label>
+                    <input type="text" id="source" name="source" required>
+                    
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" name="destination" required>
+                    
+                    <label for="weight">Weight in Pounds:</label>
+                    <input type="number" id="weight" name="weight" required>
+                
+                    <button type="submit" class="order">
+                        <span class="default">Start loading</span>
+                        <span class="success">loaded</span>
+                        <div class="box"></div>
+                        <div class="truck">
+                            <div class="back"></div>
+                            <div class="fronts">
+                                <div class="window"></div>
+                            </div>
+                            <div class="light top"></div>
+                            <div class="light bottom"></div>
+                        </div>
+                        <div class="lines"></div>
+                    </button>
+                </form>
+            </div>
         </section>
 
         <!-- Impact and Preventions Section -->
         <section id="preventions">
             <h2>Impact and Preventions</h2>
             <div class="decorative-box">
-                <p>Our website has the potential to form a huge positive impact on society. It would help in
-                    solving a global issue on the overall topic of climate change. This would function by informing
-                    people of the devastating carbon footprint postal services release when transporting items.
-                    Whether it's huge companies like Amazon, Ebay or something as small as your town mailman all
-                    these transportation companies release a form of carbon emission. This is heavily relevant in
-                    today's day and age due to the increase in accessibility of ordering items online. Due to this, our
-                    website helps to emphasize the urgency of this topic, by showing the carbon emissions which are
-                    released into the environment.</p>
-                <p>Furthermore, our topic will never be irrelevant or lose its importance due to carbon
-                    dioxide emissions only getting worse as time goes on, and a huge part of these emissions come
-                    from transporting products through different types of vehicles such as cargo planes, vans, and 18
-                    wheelers. However, with the knowledge of how much emissions an order/transportation method
-                    is releasing, society will be influenced to push towards more stable and less harmful forms of
-                    transportation. Thus leading to impacting the overall carbon emissions on a global scale by
-                    aiming to change how items are transported.</p>
+                <ul>
+                    <li>EcoTrack raises awareness about the carbon footprint of postal services and their impact on climate change.</li>
+                    <li>Transportation of goods, including by cargo planes, vans, and 18-wheelers, contributes heavily to emissions.</li>
+                    <li>EcoTrack emphasizes the urgency of addressing emissions caused by online shopping and transportation.</li>
+                    <li>With emissions data, people can push for more sustainable transportation methods, reducing global emissions.</li>
+                </ul>
             </div> 
         </section>
 
@@ -124,17 +95,11 @@
         <section id="price">
             <h2>Price</h2>
             <div class="decorative-box">
-                <p>Our estimated budget costs run at $94 per month for various services and server upkeep.
-                    We estimated this on a maximum of 10,000 carbon calculation requests per month. We estimate
-                    that website hosting through render will be $19 to start + $25 for our actual website hosting. Our
-                    carbon interface calculations will use the startup option which will run $30 per month. Our
-                    Google Maps calculation requests will cost .2 cents per request estimating that it will cost $20
-                    per month with 10,000 calculations. Therefore, our final upkeep costs will be ~$94 per month.
-                    After we have enough traction on our website we will be able to run ads on the website to ensure
-                    a stable income to help pay for the upkeep. The ads won't be disruptive and will at most be on
-                    the side of the page. With the maximum amount of ads being seen on the page at one time being
-                    2. Furthermore, we are going to incorporate a donation area where users can pay for having ads
-                    removed and help maintain the website.</p>
+                <ul>
+                    <li>Estimated monthly budget is $94 for services and server upkeep, supporting up to 10,000 carbon calculation requests.</li>
+                    <li>Website hosting through Render costs $19, and an additional $25 for the website itself.</li>
+                    <li>Carbon calculation interface costs $30 per month, with Google Maps calculations estimated at $20 for 10,000 requests.</li>
+                </ul>
             </div>
         </section>
 
