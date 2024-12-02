@@ -10,12 +10,12 @@ const gapikey = process.env.GAPI_KEY;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.render('index.html');
-});
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
 
-app.get('/login', (req, res) => {
-  res.sendFile(__dirname + '/public/login.html');
+// Serve index.html as a form
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.post('/', async (req, res) => {
@@ -56,10 +56,16 @@ app.post('/', async (req, res) => {
     }
 
     const carbonEstimate = await carbonResponse.json();
-    res.send(carbonEstimate);
+
+    // Render the EJS template and pass the JSON data
+    const pounds = carbonEstimate.data.attributes.carbon_lb;
+    res.send(`<h1>The carbon estimate is ${pounds} pounds</h1>
+    <a href="/">Go back</a>`);
   } catch (error) {
-    console.error("Error:", error);
-    res.status(500).send({ error: "An error occurred while processing your request." });
+    console.error("Error occurred:", error.message);
+    console.error("Stack Trace:", error.stack);
+    res.status(500).send({ error: `An error occurred: ${error.message}` });
+
   }
 });
 
